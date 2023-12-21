@@ -1,0 +1,25 @@
+{
+    "name": "udemy_parser_tutorial",
+    "version": "1.0.0",
+    "description": "Udemy Building a Parser from scratch",
+    "main": "app.js",
+    "scripts": {
+        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+        "webpack": "webpack",
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/losslessring/udemy_parser_tutorial.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/losslessring/udemy_parser_tutorial/issues"
+    },
+    "homepage": "https://github.com/losslessring/udemy_parser_tutorial#readme",
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "nodemon": "^3.0.2"
+    }
+}
