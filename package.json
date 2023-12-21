@@ -3,10 +3,14 @@
     "version": "1.0.0",
     "description": "Udemy Building a Parser from scratch",
     "main": "app.js",
+    "type": "module",
     "scripts": {
         "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
         "webpack": "webpack",
         "start": "nodemon app.js"
+    },
+    "jest": {
+        "transform": {}
     },
     "repository": {
         "type": "git",

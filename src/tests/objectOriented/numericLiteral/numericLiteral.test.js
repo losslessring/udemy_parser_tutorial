@@ -1,9 +1,8 @@
-const { Parser } = require("../../../objectOriented/Parser")
+import { Parser } from "../../../objectOriented/Parser"
 
 describe("parse number", () => {
     it("returns numeric literal from string '42'", () => {
         const parser = new Parser()
-
         const program = `42`
         const ast = parser.parse(program)
 

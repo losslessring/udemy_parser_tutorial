@@ -1,4 +1,4 @@
-class Parser {
+export class Parser {
     parse(string) {
         this._string = string
         return this.Program()
@@ -16,6 +16,6 @@ class Parser {
     }
 }
 
-module.exports = {
-    Parser,
-}
+// module.exports = {
+//     Parser,
+// }
