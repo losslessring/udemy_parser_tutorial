@@ -18,25 +18,33 @@ export class Tokenizer {
 
         const string = this._string.slice(this._cursor)
 
-        if (!Number.isNaN(Number(string[0]))) {
-            let number = ""
-            while (!Number.isNaN(Number(string[this._cursor]))) {
-                number += string[this._cursor++]
-            }
+        //Numbers
+        let matched = /^\d+/.exec(string)
+        if (matched !== null) {
+            this._cursor += matched[0].length
+
             return {
                 type: "NUMBER",
-                value: number,
+                value: matched[0],
             }
         }
-        if (string[0] === '"') {
-            let s = ""
-            do {
-                s += string[this._cursor++]
-            } while (string[this._cursor] !== '"' && !this.isEOF())
-            s += this._cursor++ //skip closing "
+
+        //Single quote string
+        matched = /^"[^"]*"/.exec(string)
+        if (matched !== null) {
+            this._cursor += matched[0].length
             return {
                 type: "STRING",
-                value: s,
+                value: matched[0],
+            }
+        }
+        //Double quote string
+        matched = /^'[^']*'/.exec(string)
+        if (matched !== null) {
+            this._cursor += matched[0].length
+            return {
+                type: "STRING",
+                value: matched[0],
             }
         }
 
