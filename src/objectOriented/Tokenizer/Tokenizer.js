@@ -1,3 +1,9 @@
+const Spec = [
+    [/^\d+/, "NUMBER"],
+    [/^"[^"]*"/, "STRING"],
+    [/^'[^']*'/, "STRING"],
+]
+
 export class Tokenizer {
     init(string) {
         this._string = string
@@ -17,6 +23,9 @@ export class Tokenizer {
         }
 
         const string = this._string.slice(this._cursor)
+
+        for (const [regexp, tokenType] of Spec) {
+        }
 
         //Numbers
         let matched = /^\d+/.exec(string)
