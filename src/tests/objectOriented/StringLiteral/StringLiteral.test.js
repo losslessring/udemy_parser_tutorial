@@ -1,14 +1,14 @@
 import { Parser } from "../../../objectOriented/Parser/Parser"
 
-describe("parse number", () => {
-    it("returns numeric literal from string '42'", () => {
+describe("parse string", () => {
+    it(`returns string literal from string "hello"`, () => {
         const parser = new Parser()
-        const program = `42`
+        const program = `"hello"`
         const ast = parser.parse(program)
 
         const result = {
             type: "Program",
-            body: { type: "NumericLiteral", value: 42 },
+            body: { type: "StringLiteral", value: "hello" },
         }
         expect(ast).toStrictEqual(result)
     })
