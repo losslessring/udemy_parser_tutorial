@@ -64,7 +64,3 @@ export class Parser {
         return token
     }
 }
-
-// module.exports = {
-//     Parser,
-// }
