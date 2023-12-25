@@ -2,6 +2,7 @@ const Spec = [
     [/^\s+/, null], //whitespaces
     [/^\/\/.*/, null], // single-line comments
     [/^\/\*[\s\S]*?\*\//, null], //multi-line comments
+    [/^;/, ";"], // delimiter
     [/^\d+/, "NUMBER"],
     [/^"[^"]*"/, "STRING"],
     [/^'[^']*'/, "STRING"],

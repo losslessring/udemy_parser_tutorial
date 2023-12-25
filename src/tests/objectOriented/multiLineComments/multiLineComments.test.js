@@ -7,13 +7,18 @@ describe("skip multi-line comments", () => {
         /**
         * this comment should be skipped
         */
-        42`
+        42;`
         const ast = parser.parse(program)
-
         const result = {
             type: "Program",
-            body: { type: "NumericLiteral", value: 42 },
+            body: [
+                {
+                    type: "ExpressionStatement",
+                    expression: { type: "NumericLiteral", value: 42 },
+                },
+            ],
         }
+
         expect(ast).toStrictEqual(result)
     })
 })
