@@ -1,11 +1,25 @@
 const Spec = [
-    [/^\s+/, null], //whitespaces
-    [/^\/\/.*/, null], // single-line comments
-    [/^\/\*[\s\S]*?\*\//, null], //multi-line comments
-    [/^;/, ";"], // delimiter
+    //Whitespaces
+    [/^\s+/, null],
+
+    //Skip single-line comments
+    [/^\/\/.*/, null],
+
+    //Skip multi-line comments
+    [/^\/\*[\s\S]*?\*\//, null],
+
+    // Delimiters
+    [/^;/, ";"],
     [/^\{/, "{"],
     [/^\}/, "}"],
+
+    // Math operators +, -
+    [/^[+\-]/, "ADDITIVE_OPERATOR"],
+
+    //Numbers
     [/^\d+/, "NUMBER"],
+
+    //Strings
     [/^"[^"]*"/, "STRING"],
     [/^'[^']*'/, "STRING"],
 ]
